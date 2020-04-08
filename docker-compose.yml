@@ -2,3 +2,21 @@ version: '2.3'
 networks:
   test:
     driver: bridge
+    
+services:
+  db:
+    image: mongo:3.0.2
+    expose:
+      - "27017"
+    container_name: mongodb
+    environment:
+      - MONGO_DATA_DIR=/data/db
+      - MONGO_LOG_DIR=/data/configdb
+    volumes:
+      - ./mongodb:/data/db
+      - ./mongodb_config:/data/configdb
+    command: mongod --master # --quiet
+    ports:
+      - "27018:27017"
+    networks:
+      - test
