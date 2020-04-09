@@ -21,7 +21,7 @@ A decent python based library, but unfortunately haven’t been updated for almo
 A great and updated frequently library, but it does not actually sync the data between mongodb and Elasticsearch in real time! Which means that it’s job is done once the sync is done. 
 
 # What is Monstache ?
-Monstache is a sync daemon written in Go that continuously indexes your MongoDB collections into Elasticsearch. Monstache gives you the ability to use Elasticsearch to do complex searches and aggregations of your MongoDB data and easily build realtime Kibana visualizations and dashboards.
-documentation for Monstache : https://rwynn.github.io/monstache-site/
+Monstache is a sync daemon written in Go that continuously indexes your MongoDB collections into Elasticsearch. Monstache gives you the ability to use Elasticsearch to do complex searches and aggregations of your MongoDB data and easily build realtime Kibana visualizations and dashboards.<br>
+documentation for Monstache : https://rwynn.github.io/monstache-site/<br>
 github : https://github.com/rwynn/monstache
 
