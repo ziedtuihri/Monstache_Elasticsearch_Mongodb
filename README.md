@@ -11,10 +11,10 @@ eBay, Facebook, Uber, github, Microsoft, Just Eat.
 
 # Sync mongodb to elasticsearch
 
-Mongodb-River:
+<h6 color="red">Mongodb-River:</h6>
 unfortunately this plugin is not supporting the latest version of Elasticsearch but only support 1.7- and you are not lucky to use real time sync .
 
-Mongo-connector:
+<h6 color="red">Mongo-connector:</h6>
 A decent python based library, but unfortunately haven’t been updated for almost a two year, not to mention that it does not support Elasticsearch version 6+ out of the box, only support Elasticsearch 5-.
 
 Transporter:
