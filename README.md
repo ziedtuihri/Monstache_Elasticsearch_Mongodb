@@ -11,13 +11,13 @@ eBay, Facebook, Uber, github, Microsoft, Just Eat.
 
 # Sync mongodb to elasticsearch
 
-<h6 color="red">Mongodb-River:</h6>
+<h3 color="red">Mongodb-River:</h3>
 unfortunately this plugin is not supporting the latest version of Elasticsearch but only support 1.7- and you are not lucky to use real time sync .
 
-<h6 color="red">Mongo-connector:</h6>
+<h3 color="red">Mongo-connector:</h3>
 A decent python based library, but unfortunately haven’t been updated for almost a two year, not to mention that it does not support Elasticsearch version 6+ out of the box, only support Elasticsearch 5-.
 
-Transporter:
+<h3 color="red">Transporter:</h3>
 A great and updated frequently library, but it does not actually sync the data between mongodb and Elasticsearch in real time! Which means that it’s job is done once the sync is done. 
 
 # What is Monstache ?
