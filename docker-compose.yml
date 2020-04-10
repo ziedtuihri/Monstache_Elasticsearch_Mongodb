@@ -45,3 +45,22 @@ services:
         hard: -1
     networks:
       - test
+      
+  monstache:
+    image: rwynn/monstache:rel4
+    expose:
+      - "8080"
+    ports:
+      - "8080:8080"
+    container_name: monstache
+    command: -mongo-url=mongodb://db:27017 -elasticsearch-url=http://elasticsearch:9200 -direct-read-namespace=Product_DB.Product -direct-read-split-max=2
+    links:
+      - elasticsearch
+      - db
+    depends_on:
+      db:
+        condition: service_started
+      elasticsearch:
+        condition: service_healthy
+    networks:
+      - test
