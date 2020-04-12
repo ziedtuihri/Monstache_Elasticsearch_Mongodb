@@ -1,16 +1,16 @@
 befor rannig container do this command
 
-1) run this commande en terminal
+# 1) run this commande en terminal
 
 sysctl -w vm.max_map_count=262144
 
 if you work on a server i don't know if is necessary
 
-2)run en terminal
+# 2)run en terminal
 
 docker-compose build
 
-3) run en terminal
+# 3) run en terminal
 
 docker-compose up -d
 
@@ -26,7 +26,7 @@ on terminal you shoulf see => replica set created
 
 docker-compose down
 
-4)run en terminal
+# 4)run en terminal
 
 docker-compose up
 
