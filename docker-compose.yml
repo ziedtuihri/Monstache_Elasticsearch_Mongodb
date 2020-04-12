@@ -2,22 +2,19 @@ version: '2.3'
 networks:
   test:
     driver: bridge
-    
+
 services:
   db:
     image: mongo:3.0.2
     expose:
       - "27017"
     container_name: mongodb
-    environment:
-      - MONGO_DATA_DIR=/data/db
-      - MONGO_LOG_DIR=/data/configdb
     volumes:
       - ./mongodb:/data/db
       - ./mongodb_config:/data/configdb
-    command: mongod --master # --quiet
     ports:
       - "27018:27017"
+    command: mongod --smallfiles --replSet rs0
     networks:
       - test
 
@@ -45,7 +42,7 @@ services:
         hard: -1
     networks:
       - test
-      
+
   monstache:
     image: rwynn/monstache:rel4
     expose:
@@ -64,3 +61,21 @@ services:
         condition: service_healthy
     networks:
       - test
+
+  product_microservice:
+    build: ./app
+    volumes:
+      - ./app:/app
+    links:
+      - db
+      - elasticsearch
+    depends_on:
+      - db
+      - elasticsearch
+    environment:
+      VIRTUAL_HOST: product.smartlist.mind.engineering
+      VIRTUAL_PORT: 5000
+    networks:
+      - test
+#if you have a trouble in this configure you can see :
+#https://github.com/ziedtuihri/Monstache_Elasticsearch_Mongodb
