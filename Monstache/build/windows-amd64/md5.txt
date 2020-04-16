@@ -1,0 +1,1 @@
+3fde738796718d91c68fc8d2d6f417da  build/windows-amd64/monstache.exe
