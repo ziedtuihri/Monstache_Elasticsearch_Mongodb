@@ -26,6 +26,14 @@ documentation for Monstache : https://rwynn.github.io/monstache-site/<br>
 github : https://github.com/rwynn/monstache
 
 # What is MongoDB Replication?
-A replica set is a group of <a src="https://docs.mongodb.com/manual/reference/program/mongod/#bin.mongod">mongod</a> instances that maintain the same data set. A replica set contains several data bearing nodes and optionally one arbiter node. Of the data bearing nodes, one and only one member is deemed the primary node, while the other nodes are deemed secondary nodes.<br>
-<a src="https://docs.mongodb.com/manual/core/replica-set-primary">The primary node </a>receives all write operations. A replica set can have only one primary capable of confirming writes with { w: "majority" } write concern; although in some circumstances, another mongod instance may transiently believe itself to also be primary. [1] The primary records all changes to its data sets in its operation log, i.e. oplog. For more information on primary node operation, see Replica Set Primary.
+A replica set is a group of mongod instances that maintain the same data set. A replica set contains several data bearing nodes and optionally one arbiter node.<br>
+Of the data bearing nodes, one and only one member is deemed the primary node, while the other nodes are deemed secondary nodes.<br>
+The primary node receives all write operations. <br>
+A replica set can have only one primary capable of confirming writes with { w: "majority" } write concern; although in some circumstances, another mongod instance may transiently believe itself to also be primary. [1] The primary records all changes to its data sets in its operation log, i.e. oplog. For more information on primary node operation, see Replica Set Primary.
+see :<br>
+https://docs.mongodb.com/manual/core/replica-set-primary/<br>
+https://docs.mongodb.com/manual/reference/program/mongod/#bin.mongod<br>
+https://docs.mongodb.com/manual/core/replica-set-primary/<br>
+https://docs.mongodb.com/manual/reference/replica-configuration/<br>
+
 
