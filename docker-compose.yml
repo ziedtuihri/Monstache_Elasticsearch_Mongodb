@@ -2,21 +2,80 @@ version: '2.3'
 networks:
   test:
     driver: bridge
-    
+
 services:
   db:
     image: mongo:3.0.2
     expose:
       - "27017"
     container_name: mongodb
-    environment:
-      - MONGO_DATA_DIR=/data/db
-      - MONGO_LOG_DIR=/data/configdb
     volumes:
       - ./mongodb:/data/db
       - ./mongodb_config:/data/configdb
-    command: mongod --master # --quiet
     ports:
       - "27018:27017"
+    command: mongod --smallfiles --replSet rs0
     networks:
       - test
+
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:6.8.7
+    container_name: elasticsearch
+    volumes:
+      - ./elastic:/usr/share/elasticsearch/data
+      - ./elastic/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml
+    ports:
+      - 9200:9200
+    command: elasticsearch -Enetwork.host=_local_,_site_ -Enetwork.publish_host=_local_
+    healthcheck:
+      test: "wget -q -O - http://localhost:9200/_cat/health"
+      interval: 1s
+      timeout: 30s
+      retries: 300
+    ulimits:
+      nproc: 65536
+      nofile:
+        soft: 65536
+        hard: 65536
+      memlock:
+        soft: -1
+        hard: -1
+    networks:
+      - test
+
+  monstache:
+    image: rwynn/monstache:rel4
+    expose:
+      - "8080"
+    ports:
+      - "8080:8080"
+    container_name: monstache
+    command: -mongo-url=mongodb://db:27017 -elasticsearch-url=http://elasticsearch:9200 -direct-read-namespace=Product_DB.Product -direct-read-split-max=2
+    links:
+      - elasticsearch
+      - db
+    depends_on:
+      db:
+        condition: service_started
+      elasticsearch:
+        condition: service_healthy
+    networks:
+      - test
+
+  product_microservice:
+    build: ./app
+    volumes:
+      - ./app:/app
+    links:
+      - db
+      - elasticsearch
+    depends_on:
+      - db
+      - elasticsearch
+    environment:
+      VIRTUAL_HOST: product.smartlist.mind.engineering
+      VIRTUAL_PORT: 5000
+    networks:
+      - test
+#if you have a trouble in this configure you can see :
+#https://github.com/ziedtuihri/Monstache_Elasticsearch_Mongodb
