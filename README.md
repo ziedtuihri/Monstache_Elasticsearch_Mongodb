@@ -5,7 +5,9 @@ MongoDB is a document database with the scalability and stores data in flexible,
 Elasticsearch is a search engine based on Lucene.It uses a document-oriented approach when manipulating data which is stored in JSON format.
 # Sounds similar , what's the difference?
 Elasticsearch is a highly scalable open source full-text search and analytics engine, whereas MongoDB is next-generation database.Unlike MongoDB, ElasticSearch is not yet ready for use as main storage for data.
-Elasticsearch is generally used as the underlying engine/technology that powers applications that have complex search features and requirements. MongoDB is not a search engine but it has full text search feature.
+Elasticsearch is generally used as the underlying engine/technology that powers applications that have complex search features and requirements. MongoDB is not a search engine but it has full text search feature.<br>
+example : <br>
+<img src="./Images/img.png">
 # Who uses Elasticsearch?
 eBay, Facebook, Uber, github, Microsoft, Just Eat, Google, Bing, Yahoo!, DuckDuckGo.
 
