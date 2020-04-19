@@ -30,7 +30,7 @@ A replica set is a group of mongod instances that maintain the same data set. A 
 Of the data bearing nodes, one and only one member is deemed the primary node, while the other nodes are deemed secondary nodes.<br>
 The primary node receives all write operations. <br>
 A replica set can have only one primary capable of confirming writes with { w: "majority" } write concern; although in some circumstances, another mongod instance may transiently believe itself to also be primary. [1] The primary records all changes to its data sets in its operation log, i.e. oplog. For more information on primary node operation, see Replica Set Primary.<br>
-# replica set allow you to indexes your MongoDB collections into Elasticsearch en real time synchronization.
+<h3>replica set allow you to indexes your MongoDB collections into Elasticsearch en real time synchronization.</h3>
 if you have a CRUD on Mongodb with this mode you don't should down the container to get this changement on elastic.
 see :<br>
 https://docs.mongodb.com/manual/core/replica-set-primary/<br>
