@@ -41,7 +41,7 @@ https://docs.mongodb.com/manual/core/replica-set-primary/<br>
 https://docs.mongodb.com/manual/reference/replica-configuration/<br>
 
 # UML
-<h3>be careful </h3><br>
+<h3>be careful </h3>
 I would probably only write use cases and perhaps provide system sequence diagrams, and only documenting the success path.
 The others class diagram,  object diagram, Activity diagram...  don't make sense in the given context.
 <br>Example:<br>
