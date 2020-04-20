@@ -40,4 +40,12 @@ https://docs.mongodb.com/manual/reference/program/mongod/#bin.mongod<br>
 https://docs.mongodb.com/manual/core/replica-set-primary/<br>
 https://docs.mongodb.com/manual/reference/replica-configuration/<br>
 
+# UML
+<h3>be careful </h3><br>
+I would probably only write use cases and perhaps provide system sequence diagrams, and only documenting the success path.
+The others class diagram,  object diagram, Activity diagram...  don't make sense in the given context.
+<br>Example:<br>
+https://creately.com/creately-start/?tempID=ing30o3m<br>
+https://app.creately.com/diagram/tZc7OevXtx5/edit<br>
+<img src="./Images/Screenshot from 2020-04-19 23-04-55.png" style="height: 100px;width: 100px;">
 
