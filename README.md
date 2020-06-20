@@ -49,3 +49,8 @@ https://creately.com/creately-start/?tempID=ing30o3m<br>
 https://app.creately.com/diagram/tZc7OevXtx5/edit<br>
 <img src="./Images/Screenshot from 2020-04-19 23-04-55.png" style="height: 100px;width: 100px;">
 
+# Full-text queries
+Although you can use HTTP request parameters to perform simple searches, the Elasticsearch query domain-specific language (DSL) lets you specify the full range of search options. The query DSL uses the HTTP request body. Queries specified in this way have the added advantage of being more explicit in their intent and easier to tune over time.
+
+you can show : <br>
+https://opendistro.github.io/for-elasticsearch-docs/docs/elasticsearch/full-text/#match
